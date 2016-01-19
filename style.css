@@ -1,25 +1,46 @@
+@font-face {
+  font-family: 'binary'; /*a name to be used later*/
+  src: url('binaryt.ttf'); /*URL to font*/
+}
+
 * {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
+  font-family: sans-serif;
 }
 
 .calc {
-	margin: 0 auto;
+	margin: 2em auto;
 	width: 500px;
 	height: 700px;
-	background: #22313F;
+	background: #34495E;
+  border-right: 10px solid #22313F;
+  border-bottom: 10px solid #22313F;
+  border-radius: 10px;
 }
 .display {
 	margin: 70px auto;
 	height: 80px;
 	width: 90%;
-	background: #fff;
+	background: #95A5A6;;
+  border-style: inset;
+  border-color: grey;
+}
+.display span {
+  font-family: 'binary'
+  display: inline-block;
+  font-size: 42px;
+  padding-top: 0.4em;
+  padding-left: 0.4em;
 }
 .numbers {
 	display: inline-block;
 	width: 70%;
   height: 30em;
+}
+.numbers form {
+    display: inline-block;
 }
 .numbers input[type='submit'] {
     margin-top: 15px;
@@ -27,7 +48,7 @@
 	}
 .operators {
 	display: inline-block;
-	width: 9.1em;
+	width: 9em;
 	height: 30em;
 }
 
@@ -44,4 +65,8 @@
 	border-radius: 5px;
 	width: 90px;
 	height: 90px;
+}
+.calc input[type='submit']:focus {
+  border: none;
+  outline: none;
 }

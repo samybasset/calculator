@@ -4,35 +4,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Calculator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-	<form action="" method='post'>
 		<div class="calc">
-			<div class="display"></div>
+			<div class="display">
+        <span>
+        </span>
+      </div>
 			<div class="controls">
 				<div class="numbers">
-					<input type="submit" name='1' value='1'>
-					<input type="submit" name='2' value='2'>
-					<input type="submit" name='3' value='3'>
-					<input type="submit" name='4' value='4'>
-					<input type="submit" name='5' value='5'>
-					<input type="submit" name='6' value='6'>
-					<input type="submit" name='7' value='7'>
-					<input type="submit" name='8' value='8'>
-					<input type="submit" name='9' value='9'>
-					<input type="submit" name='0' value='0'>
-					<input type="submit" name='null' value='d' style='visibility: hidden;'>
-					<input type="submit" name='=' value='='>
+					<form method='post'><input type="submit" name='num' value='1'></form>
+					<form method='post'><input type="submit" name='num' value='2'></form>
+					<form method='post'><input type="submit" name='num' value='3'></form>
+					<form method='post'><input type="submit" name='num' value='4'></form>
+					<form method='post'><input type="submit" name='num' value='5'></form>
+					<form method='post'><input type="submit" name='num' value='6'></form>
+					<form method='post'><input type="submit" name='num' value='7'></form>
+					<form method='post'><input type="submit" name='num' value='8'></form>
+					<form method='post'><input type="submit" name='num' value='9'></form>
+					<form method='post'><input type="submit" name='num' value='0'></form>
+					<form method='post'><input type="submit" name='null' value='d' style='visibility: hidden;'></form>
+					<form method='post'><input type="submit" name='=' value='='></form>
 				</div>
 				<div class="operators">
-					<input type="submit" name='+' value='+'>
-					<input type="submit" name='-' value='-'>
-					<input type="submit" name='/' value='/'>
-					<input type="submit" name='x' value='x'>
+					<form method='post'><input type="submit" name='operator' value='+'></form>
+					<form method='post'><input type="submit" name='operator' value='-'></form>
+					<form method='post'><input type="submit" name='operator' value='/'></form>
+					<form method='post'><input type="submit" name='operator' value='x'></form>
 				</div>
+        <?php 
+            if(isset($_POST['='])) {
+              $sum = new Sum(12, 3);
+              echo "<script>$('.display span').append('".$sum->makeSum(12, 3)."');</script>";
+            }
+          ?>
 			</div>
 		</div>
-	</form>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </html>
